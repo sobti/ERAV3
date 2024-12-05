@@ -67,9 +67,9 @@ def train_model():
     optimizer = optim.Adam(model.parameters())
     dummy_input = torch.randn(16, 1, 28, 28)  # Batch of 16 MNIST-like images
     # Perform forward pass
-    output = model(dummy_input)
+    output_test = model(dummy_input)
     # Check output shape
-    assert output.shape == (16, 10), f"Expected output shape (16, 10), but got {output.shape}"
+    assert output_test.shape == (16, 10), f"Expected output shape (16, 10), but got {output_test.shape}"
     
     # Train for one epoch
     model.train()
