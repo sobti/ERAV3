@@ -8,18 +8,16 @@ from torchvision.utils import make_grid
 import matplotlib.pyplot as plt
 from model import SimpleCNN, count_parameters, save_model
 
-def save_transformed_images_grid(data_loader, save_path="transformed_images_grid.png"):
-    # Get a batch of data
+def save_transformed_images_grid(data_loader, save_path="outputs/transformed_images_grid.png"):
+       # Ensure the directory exists
+    os.makedirs(os.path.dirname(save_path), exist_ok=True)
+
     data_iter = iter(data_loader)
     images, labels = next(data_iter)
-    
-    # Create a grid of images
-    grid = make_grid(images[:16], nrow=4, normalize=True, pad_value=1)  # 4x4 grid
-    
-    # Convert the grid to a NumPy array
-    np_grid = grid.permute(1, 2, 0).numpy()  # Rearrange dimensions for matplotlib (H, W, C)
-    
-    # Save the grid as an image
+
+    grid = make_grid(images[:16], nrow=4, normalize=True, pad_value=1)
+    np_grid = grid.permute(1, 2, 0).numpy()
+
     plt.figure(figsize=(8, 8))
     plt.imshow(np_grid, cmap="gray")
     plt.axis("off")
@@ -56,7 +54,8 @@ def train_model():
 
        # Show some transformed images
     print("Transformed Training Images:")
-    save_transformed_images_grid(train_loader)
+    save_transformed_images_grid(train_loader, save_path="outputs/transformed_images_grid.png")
+
     
     # Initialize model
     model = SimpleCNN().to(device)
