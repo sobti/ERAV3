@@ -50,6 +50,12 @@ jobs:
         name: trained-model
         path: model_acc*.pth
         retention-days: 5
+
+    - name: Upload Transformed Images
+      uses: actions/upload-artifact@v4
+      with:
+        name: transformed-images
+        path: transformed_images/
         
     - name: Check training results
       run: |
