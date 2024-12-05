@@ -1,14 +1,16 @@
-# MNIST AI Model
+# MNIST CNN Classifier
 
-This project trains a Convolutional Neural Network (CNN) to classify handwritten digits (0-9) from the [MNIST dataset](http://yann.lecun.com/exdb/mnist/). The model is implemented in PyTorch and uses transformations to augment the training data for improved accuracy.
+This project implements a Convolutional Neural Network (CNN) to classify handwritten digits (0-9) from the MNIST dataset using PyTorch. The model is trained on transformed images to improve robustness and accuracy.
+
+---
 
 ## Features
 
-- **Data Augmentation**: Includes brightness, contrast, rotation, and normalization.
-- **Model Architecture**: A simple CNN for digit classification.
-- **Training Pipeline**: Automated training and testing with accuracy reporting.
-- **Artifact Uploads**: Saves transformed images and trained model files.
-- **GitHub Actions Integration**: CI/CD pipeline for reproducible training.
+- **Convolutional Neural Network**: A simple CNN model for digit classification.
+- **Data Augmentation**: Includes transformations like brightness, rotation, and normalization.
+- **Training Pipeline**: Automates training, testing, and accuracy reporting.
+- **Grid Visualization**: Saves a grid of transformed training images for verification.
+- **GitHub Actions Support**: CI/CD pipeline for training and saving artifacts.
 
 ---
 
@@ -16,26 +18,69 @@ This project trains a Convolutional Neural Network (CNN) to classify handwritten
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/yourusername/mnist-ai-model.git
-   cd mnist-ai-model
-2. Install dependencies: Make sure you have Python 3.8 or higher installed. Then install the required libraries:
-3. Download MNIST Dataset: The dataset will automatically be downloaded during the first training run.
-Usage
+   git clone https://github.com/yourusername/mnist-cnn.git
 
-Train the Model
-Run the training script:
+2. # MNIST CNN Classifier
 
-python train_model.py
+This project implements a Convolutional Neural Network (CNN) to classify handwritten digits (0-9) from the MNIST dataset using PyTorch. The model is trained on transformed images to improve robustness and accuracy.
+
+---
+
+## Features
+
+- **Convolutional Neural Network**: A simple CNN model for digit classification.
+- **Data Augmentation**: Includes transformations like brightness, rotation, and normalization.
+- **Training Pipeline**: Automates training, testing, and accuracy reporting.
+- **Grid Visualization**: Saves a grid of transformed training images for verification.
+- **GitHub Actions Support**: CI/CD pipeline for training and saving artifacts.
+
+---
+
+## Installation
+
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/yourusername/mnist-cnn.git
+   cd mnist-cnn
+2. # MNIST CNN Classifier
+
+This project implements a Convolutional Neural Network (CNN) to classify handwritten digits (0-9) from the MNIST dataset using PyTorch. The model is trained on transformed images to improve robustness and accuracy.
+
+---
+
+## Features
+
+- **Convolutional Neural Network**: A simple CNN model for digit classification.
+- **Data Augmentation**: Includes transformations like brightness, rotation, and normalization.
+- **Training Pipeline**: Automates training, testing, and accuracy reporting.
+- **Grid Visualization**: Saves a grid of transformed training images for verification.
+- **GitHub Actions Support**: CI/CD pipeline for training and saving artifacts.
+
+---
+
+## Installation
+
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/yourusername/mnist-cnn.git
+   cd mnist-cnn
+2. Install dependencies: Ensure Python 3.8 or higher is installed, then run:
+   pip install -r requirements.txt
+3. Download the MNIST dataset: The dataset is automatically downloaded during the first training run.
+4. Training the Model
+   Run the training script:python train_model.py
 This will:
 
-Train the CNN on the MNIST training dataset.
-Evaluate the model on the test dataset.
-Save the trained model to a timestamped file in the project directory.
-View Transformed Images
-The script saves transformed training images to the transformed_images/ directory. You can view these images to verify the preprocessing pipeline.
+*Train the CNN on the MNIST training dataset.
+*Evaluate the model on the test dataset.
+*Save the trained model to a timestamped file (e.g., model_2024-12-05_98.20.pth).
+*Visualizing Transformations
+*The script saves a grid of transformed training images to outputs/transformed_images_grid.png. Open this file to verify the data augmentation pipeline.
+5. Model Details
+   *Transformations:Brightness Adjustment: Randomly alters image brightness.
+   **Rotation: Rotates images between -10° and 10°.
+   **Normalization: Normalizes images using mean 0.1307 and std 0.3081.
 
-GitHub Actions
-This repository includes a GitHub Actions workflow to:
 
-Train the model in a CI environment.
-Save transformed images and the trained model as artifacts
+   
+
