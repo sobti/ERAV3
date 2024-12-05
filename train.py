@@ -72,7 +72,7 @@ def train_model():
         data, target = data.to(device), target.to(device)
         optimizer.zero_grad()
         output = model(data)
-        assert output.shape == (16, 10), f"Expected output shape (16, 10), but got {output.shape}"
+        assert output.shape == (64, 10), f"Expected output shape (64, 10), but got {output.shape}"
         loss = criterion(output, target)
         loss.backward()
         optimizer.step()
