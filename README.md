@@ -74,15 +74,15 @@ This project implements a Convolutional Neural Network (CNN) to classify handwri
    Run the training script:python train_model.py
 This will:
 
-- **Train the CNN on the MNIST training dataset.
-- **Evaluate the model on the test dataset.
-- **Save the trained model to a timestamped file (e.g., model_2024-12-05_98.20.pth).
-- **Visualizing Transformations
-- **The script saves a grid of transformed training images to outputs/transformed_images_grid.png. Open this file to verify the data augmentation pipeline.
+- Train the CNN on the MNIST training dataset.
+- Evaluate the model on the test dataset.
+- Save the trained model to a timestamped file (e.g., model_2024-12-05_98.20.pth).
+- Visualizing Transformations
+- The script saves a grid of transformed training images to outputs/transformed_images_grid.png. Open this file to verify the data augmentation pipeline.
 5. Model Details
-   *Transformations:Brightness Adjustment: Randomly alters image brightness.
-   **Rotation: Rotates images between -10° and 10°.
-   **Normalization: Normalizes images using mean 0.1307 and std 0.3081.
+   - Transformations:Brightness Adjustment: Randomly alters image brightness.
+   - Rotation: Rotates images between -10° and 10°.
+   - Normalization: Normalizes images using mean 0.1307 and std 0.3081.
 
 
    
