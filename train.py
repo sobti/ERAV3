@@ -1,4 +1,5 @@
 import torch
+import os
 import torch.nn as nn
 import torch.optim as optim
 from torchvision import datasets, transforms
@@ -49,7 +50,7 @@ def train_model():
 
        # Show some transformed images
     print("Transformed Training Images:")
-    show_transformed_images(train_loader)
+    save_transformed_images(train_loader)
     
     # Initialize model
     model = SimpleCNN().to(device)
