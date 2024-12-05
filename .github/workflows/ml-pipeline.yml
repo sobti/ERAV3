@@ -52,7 +52,7 @@ jobs:
         retention-days: 5
 
     - name: Upload Transformed Images Grid
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: transformed-image-grid
         path: outputs/transformed_images_grid.png
