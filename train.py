@@ -36,8 +36,7 @@ def train_model():
     train_transforms = transforms.Compose([
         transforms.ColorJitter(brightness=0.20, contrast=0.1, saturation=0, hue=0.5),
         transforms.RandomRotation((-10, 10), fill=(0,)),
-        transforms.RandomPerspective(distortion_scale=0.6, p=1.0),
-        transforms.ElasticTransform(alpha=250.0),
+        transforms.RandomPerspective(distortion_scale=0.4, p=0.5),
         transforms.ToTensor(),
         transforms.Normalize((0.1307,), (0.3081,))  # Mean and std are tuples
     ])
