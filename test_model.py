@@ -6,7 +6,8 @@ from model import SimpleCNN, count_parameters
 def test_model_parameters():
     model = SimpleCNN()
     param_count = count_parameters(model)
-    assert param_count < 25000, f"Model has {param_count} parameters, should be less than 100000"
+    print(param_count)
+    assert param_count < 25000, f"Model has {param_count} parameters, should be less than 25000"
 
 def test_input_shape():
     model = SimpleCNN()
