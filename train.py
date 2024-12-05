@@ -65,6 +65,11 @@ def train_model():
     model = SimpleCNN().to(device)
     criterion = nn.CrossEntropyLoss()
     optimizer = optim.Adam(model.parameters())
+    dummy_input = torch.randn(16, 1, 28, 28)  # Batch of 16 MNIST-like images
+    # Perform forward pass
+    output = model(dummy_input)
+    # Check output shape
+    assert output.shape == (16, 10), f"Expected output shape (16, 10), but got {output.shape}"
     
     # Train for one epoch
     model.train()
@@ -72,7 +77,6 @@ def train_model():
         data, target = data.to(device), target.to(device)
         optimizer.zero_grad()
         output = model(data)
-        assert output.shape == (64, 10), f"Expected output shape (64, 10), but got {output.shape}"
         loss = criterion(output, target)
         loss.backward()
         optimizer.step()
