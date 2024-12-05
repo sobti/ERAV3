@@ -35,7 +35,7 @@ def train_model():
       # Train Phase transformations
     train_transforms = transforms.Compose([
         transforms.ColorJitter(brightness=0.20, contrast=0.1, saturation=0, hue=0.5),
-        transforms.RandomRotation((-15, 15), fill=(0,)),
+        transforms.RandomRotation((-10, 10), fill=(0,)),
         transforms.RandomHorizontalFlip(),
         transforms.ToTensor(),
         transforms.Normalize((0.1307,), (0.3081,))  # Mean and std are tuples
