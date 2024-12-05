@@ -55,7 +55,7 @@ def train_model():
 
        # Show some transformed images
     print("Transformed Training Images:")
-    save_transformed_images(train_loader)
+    save_transformed_images_grid(train_loader)
     
     # Initialize model
     model = SimpleCNN().to(device)
