@@ -4,6 +4,7 @@ import torch.nn as nn
 import torch.optim as optim
 from torchvision import datasets, transforms
 import matplotlib
+from torchvision.utils import make_grid
 import matplotlib.pyplot as plt
 from model import SimpleCNN, count_parameters, save_model
 
