@@ -23,6 +23,12 @@ def test_output_shape():
     output = model(test_input)
     assert output.shape[1] == 10, f"Model output should have 10 classes, got {output.shape[1]}"
 
+def test_output_dimension():
+    model = SimpleCNN()
+    test_input = torch.randn(1, 1, 28, 28)
+    output = model(test_input)
+    assert output.shape == (16, 10), f"Model output should have 10 classes, got {output.shape}"
+
 def test_model_accuracy():
     from train import train_model
     _, accuracy, _ = train_model()
