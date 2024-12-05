@@ -51,9 +51,10 @@ def train_model():
     test_dataset = datasets.MNIST('./data', train=False, transform=test_transforms)
     
     train_loader = torch.utils.data.DataLoader(train_dataset, batch_size=64, shuffle=True)
-    assertEqual(len(train_loader.dataset), 60000, "Training dataset should have 60,000 samples")
     test_loader = torch.utils.data.DataLoader(test_dataset, batch_size=1000)
-    assertEqual(len(test_loader.dataset), 10000, "Test dataset should have 10,000 samples")
+    assert len(train_dataset) == 60000, "Training dataset should have 60,000 samples"
+    assert len(test_dataset) == 10000, "Test dataset should have 10,000 samples"
+
 
        # Show some transformed images
     print("Transformed Training Images:")
