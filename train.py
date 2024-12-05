@@ -69,7 +69,8 @@ def train_model():
     # Perform forward pass
     output_test = model(dummy_input)
     model_param = SimpleCNN()
-    print("Transformed Training Images:" + count_parameters(model_param))
+    print("Parameter Count:")
+    print(count_parameters(model_param))
     # Check output shape
     assert output_test.shape == (16, 10), f"Expected output shape (16, 10), but got {output_test.shape}"
     
