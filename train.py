@@ -7,19 +7,24 @@ import matplotlib
 import matplotlib.pyplot as plt
 from model import SimpleCNN, count_parameters, save_model
 
-def save_transformed_images(data_loader, save_dir="transformed_images"):
-    # Create the directory if it doesn't exist
-    os.makedirs(save_dir, exist_ok=True)
-    
+def save_transformed_images_grid(data_loader, save_path="transformed_images_grid.png"):
     # Get a batch of data
     data_iter = iter(data_loader)
     images, labels = next(data_iter)
     
-    # Save a few images
-    for i in range(6):
-        img = images[i].squeeze(0).numpy()  # Remove channel dimension for grayscale
-        plt.imsave(f"{save_dir}/transformed_image_{i+1}.png", img, cmap="gray")
-    print(f"Transformed images saved to {save_dir}/")
+    # Create a grid of images
+    grid = make_grid(images[:16], nrow=4, normalize=True, pad_value=1)  # 4x4 grid
+    
+    # Convert the grid to a NumPy array
+    np_grid = grid.permute(1, 2, 0).numpy()  # Rearrange dimensions for matplotlib (H, W, C)
+    
+    # Save the grid as an image
+    plt.figure(figsize=(8, 8))
+    plt.imshow(np_grid, cmap="gray")
+    plt.axis("off")
+    plt.savefig(save_path)
+    plt.close()
+    print(f"Transformed image grid saved to {save_path}")
 
 
 def train_model():
