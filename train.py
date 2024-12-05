@@ -6,20 +6,19 @@ import matplotlib
 import matplotlib.pyplot as plt
 from model import SimpleCNN, count_parameters, save_model
 
-def show_transformed_images(data_loader):
+def save_transformed_images(data_loader, save_dir="transformed_images"):
+    # Create the directory if it doesn't exist
+    os.makedirs(save_dir, exist_ok=True)
+    
     # Get a batch of data
     data_iter = iter(data_loader)
     images, labels = next(data_iter)
     
-    # Display a few images
-    fig, axes = plt.subplots(1, 6, figsize=(15, 5))
+    # Save a few images
     for i in range(6):
-        ax = axes[i]
-        img = images[i].squeeze(0)  # Remove the channel dimension for grayscale images
-        img = img.numpy()
-        ax.imshow(img, cmap="gray")
-        ax.axis('off')
-    plt.show()
+        img = images[i].squeeze(0).numpy()  # Remove channel dimension for grayscale
+        plt.imsave(f"{save_dir}/transformed_image_{i+1}.png", img, cmap="gray")
+    print(f"Transformed images saved to {save_dir}/")
 
 
 def train_model():
